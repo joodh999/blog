@@ -19,11 +19,11 @@ export const Card: React.FC<props> = ({
     const date = format(createdAt as Date, "LLL dd, yyyy");
 
     return (
-        <div className="my-5 p-4 text-left hover:bg-zinc-800 rounded-lg  ">
-            <h1 className="text-xl font-semibold sm:text-2xl text-emerald-300 hover:underline ">
+        <div className="mt-7  text-left hover:bg-zinc-800 rounded-lg  p-4">
+            <h1 className="text-xl font-semibold sm:text-2xl  hover:underline ">
                 <b>#</b> {title}
             </h1>
-            <p className="text-md py-2 text-zinc-300">{description}</p>
+            <p className="text-md py-2 text-zinc-300 ">{description}</p>
             <div className="flex text-sm font-light  text-zinc-100">
                 <p className="">{author?.name}</p>
                 <span className="mx-2">/</span>

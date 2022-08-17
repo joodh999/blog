@@ -14,7 +14,7 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
     }
 
     return (
-        <div className="mx-auto text-center max-w-lg mt-4">
+        <div className="mx-auto text-center max-w-screen-sm px-1 mt-4">
             <Header />
             <main className="mt-2">{children}</main>
         </div>

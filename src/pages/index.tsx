@@ -19,6 +19,9 @@ const Home: NextPage = () => {
 
     return (
         <Layout>
+            <h1 className="text-left text-2xl font-bold text-emerald-300">
+                Recent Posts
+            </h1>
             {data?.map((post) => {
                 return <Card key={post.id} {...post} />;
             })}
