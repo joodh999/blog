@@ -2,6 +2,7 @@ import { createRouter } from "./context";
 import { createProtectedRouter } from "./protected-router";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
+import slugify from "slugify";
 
 export const postRouter = createRouter()
     .query("getAll", {
@@ -14,6 +15,9 @@ export const postRouter = createRouter()
                                 name: true,
                             },
                         },
+                    },
+                    orderBy: {
+                        createdAt: "desc",
                     },
                 });
             } catch (error) {
@@ -47,6 +51,7 @@ export const postRouter = createRouter()
                         description: input.description,
                         content: input.content,
                         userId: ctx.session.user.id,
+                        slug: slugify(input.title),
                     },
                 });
             } catch (error) {
